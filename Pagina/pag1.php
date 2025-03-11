@@ -1,12 +1,11 @@
 <?php
   function suma ($a, $b){
-	return $a +$b;
-
+	return $a + $b;
 }
 
 $a= $_GET["a"];
 $b= $_GET["b"];
-$c= $_GET["c"];
+$c= suma($a,$b);
 
 ?>
 <html>
@@ -14,6 +13,6 @@ $c= $_GET["c"];
    <title>Suma de dos numeros</title>
   </head>
   <body>
-    <p>a + b = c</p>
+    <p><?php echo $a ?> + <?php echo $b ?> = <?php echo $c ?></p>
   </body>
 </html>
