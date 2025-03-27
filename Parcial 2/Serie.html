@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h2>Serie de 2 en 2 (2 - 400)</h2>
+<script>
+    let suma = 0;
+    let total = 0;
+        for (let i = 2; i <= 400; i += 2) {
+            document.write(i + " ");
+            suma+=i;
+            total++;
+
+        if (total === 100) {
+            numc1 = i;
+        }
+        if (total === 101) {
+            numc2 = i;
+        }
+        }
+
+        let promedio = suma / total; 
+        document.write("<h3>Promedio de la serie: ", promedio);
+
+        let  mediana = (numc1 + numc2) / 2;
+        document.write("<h3>La mediana de la serie es: ", mediana);
+        
+        document.write("<h3>La serie no tiene una moda, ya que los numeros no se repiten en una serie.</h3>");
+</script>
+</body>
+</html>
