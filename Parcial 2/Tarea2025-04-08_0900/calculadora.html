@@ -1,0 +1,96 @@
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .calculadora {
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    #Display {
+      width: 200px;
+      height: 40px;
+      text-align: right;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .boton {
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+    }
+
+    .boton:hover {
+      background-color: #ddd;
+    }
+
+    table {
+      border-spacing: 5px;
+    }
+
+    td {
+      padding: 0;
+    }
+  </style>
+  <script>
+    function btn_click(val) {
+      var display = document.getElementById("Display");
+
+      if (val === "=") {
+        try {
+          display.value = eval(display.value);
+        }else if (val === "C") {
+        display.value = "";
+      } else {
+        display.value += val;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Calculadora Básica</h2>
+  <div class="calculadora">
+    <!-- Pantalla de la calculadora -->
+    <input type="text" id="Display" readonly>
+
+    <table>
+      <tr>
+        <td><button class="boton" onclick="btn_click('7')">7</button></td>
+        <td><button class="boton" onclick="btn_click('8')">8</button></td>
+        <td><button class="boton" onclick="btn_click('9')">9</button></td>
+        <td><button class="boton" onclick="btn_click('/')">/</button></td>
+      </tr>
+      <tr>
+        <td><button class="boton" onclick="btn_click('4')">4</button></td>
+        <td><button class="boton" onclick="btn_click('5')">5</button></td>
+        <td><button class="boton" onclick="btn_click('6')">6</button></td>
+        <td><button class="boton" onclick="btn_click('*')">*</button></td>
+      </tr>
+      <tr>
+        <td><button class="boton" onclick="btn_click('1')">1</button></td>
+        <td><button class="boton" onclick="btn_click('2')">2</button></td>
+        <td><button class="boton" onclick="btn_click('3')">3</button></td>
+        <td><button class="boton" onclick="btn_click('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button class="boton" onclick="btn_click('0')">0</button></td>
+        <td><button class="boton" onclick="btn_click('.')">.</button></td>
+        <td><button class="boton" onclick="btn_click('=')">=</button></td>
+        <td><button class="boton" onclick="btn_click('+')">+</button></td>
+      </tr>
+      <tr>
+        <td colspan="4"><button class="boton" onclick="btn_click('C')">C</button></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

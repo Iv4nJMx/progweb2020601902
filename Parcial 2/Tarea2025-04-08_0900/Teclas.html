@@ -1,0 +1,63 @@
+<html>
+<head>
+  <style>
+    body {
+      text-align: center;
+    }
+    table {
+      margin: 20px auto;
+    }
+    .tecla {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      color: black;
+      cursor: pointer;
+    }
+
+    #w { background-color: #5dade2; }
+    #a { background-color: #a569bd; }
+    #s { background-color: #48c9b0; }
+    #d { background-color: #f39c12; }
+    #z { background-color: #a93226; }
+    #x { background-color: #f1c40f; }
+
+    td {
+      padding: 10px;
+    }
+  </style>
+
+  <script>
+    function cambiarColorTecla(event) {
+      const tecla = event.key.toLowerCase();
+      const div = document.getElementById(tecla);
+      if (div) {
+        const color = window.getComputedStyle(div).backgroundColor;
+        document.body.style.backgroundColor = color;
+      }
+    }
+    document.addEventListener('keydown', cambiarColorTecla);
+  </script>
+
+</head>
+<body>
+  <table>
+    <tr>
+      <td></td>
+      <td id="w" class="tecla">W</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td id="a" class="tecla">A</td>
+      <td id="s" class="tecla">S</td>
+      <td id="d" class="tecla">D</td>
+      <td></td>
+      <td></td>
+      <td id="z" class="tecla">Z</td>
+      <td></td>
+      <td id="x" class="tecla">X</td>
+    </tr>
+  </table>
+</body>
+</html>
