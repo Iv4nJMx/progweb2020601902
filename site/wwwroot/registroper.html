@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="login">
+        <h1>Registro de Usuario</h1>
+        <form action="guardar_per.php" method="POST">
+            <div class="usuario">
+                <input type="text" name="nombre" required>
+                <label>Nombre:</label>
+            </div>
+            <div class="usuario">
+                <input type="text" name="ape_paterno" required>
+                <label>Apellido Paterno:</label>
+            </div>
+            <div class="usuario">
+                <input type="text" name="ape_materno" required>
+                <label>Apellido Materno:</label>
+            </div>
+            <div class="usuario">
+                <input type="text" name="tel_personal" required maxlength="10">
+                <label>Teléfono Personal:</label>
+            </div>
+            <div class="usuario">
+                <input type="text" name="tel_casa" required maxlength="10">
+                <label>Teléfono de Casa:</label>
+            </div>
+            <div class="usuario">
+                <input type="date" name="fecha_contrato" required>
+                <label style="top: -5px; font-size: 14px;">Fecha de Contrato:</label>
+            </div>
+            <div class="usuario">
+                <input type="text" name="usuario" required>
+                <label>Usuario:</label>
+            </div>
+            <div class="contrasena">
+                <input type="password" name="contrasena" required>
+                <label>Contraseña:</label>
+            </div>
+   
+            <div class="contrasena">
+                <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
+                <label>Confirmar contraseña:</label>
+            </div>
+
+            <div id="mensajeError" style="color:red; text-align:center; display:none;">Las contraseñas no coinciden.</div>
+
+            <div class="usuario">
+                <select name="rol" required>
+                    <option value="">Seleccione rol</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Empleado">Empleado</option>
+                </select>
+                <label style="top: -5px; font-size: 14px;">Rol:</label>
+            </div>
+            <input type="submit" value="Registrar">
+        </form>
+    </div>
+    
+    <script src="js/validar_usuario.js"></script>
+</body>
+</html>
